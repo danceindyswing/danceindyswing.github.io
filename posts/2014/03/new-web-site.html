@@ -97,7 +97,7 @@
   </div>
 </div>
 
-
+  
     <div class="container">
       
   <link rel="bookmark" href="/posts/2014/03/new-web-site.html" />
@@ -202,5 +202,18 @@
 
 
     
+    <script type="text/javascript">
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "'])").attr("target","_blank");
+
+        // Bonus - Automatically record clicks in Google Analytics
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "']").on('click', function() {
+            if (_gaq === undefined) {
+                console.log("Add google analytics!");
+            }
+            else {
+                _gaq.push(['_trackPageview', '/outbound/' + $(this).attr('href')]);
+            }
+        });
+    </script>
   </body>
 </html>

@@ -97,7 +97,7 @@
   </div>
 </div>
 
-
+  
     <div class="container">
       
   <h2>About</h2>
@@ -198,5 +198,18 @@ These Terms are governed by and shall be construed in accordance with the laws o
 
 
     
+    <script type="text/javascript">
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "'])").attr("target","_blank");
+
+        // Bonus - Automatically record clicks in Google Analytics
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "']").on('click', function() {
+            if (_gaq === undefined) {
+                console.log("Add google analytics!");
+            }
+            else {
+                _gaq.push(['_trackPageview', '/outbound/' + $(this).attr('href')]);
+            }
+        });
+    </script>
   </body>
 </html>

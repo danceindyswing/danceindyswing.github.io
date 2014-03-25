@@ -97,7 +97,7 @@
   </div>
 </div>
 
-
+  
     <div class="container">
       
   
@@ -233,11 +233,14 @@
         <div class="col-lg-4">
           <h2>Club Calendar</h2>
           <br>
-          <iframe src="https://www.google.com/calendar/embed?title=Dance%20Indy%20Swing&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=400&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23FFFFFF&amp;src=admin%40indyswing.org&amp;color=%23A32929&amp;ctz=America/New_York" style=" border:solid 1px #777 " width="360" height="400" frameborder="0" scrolling="no"></iframe>
+          <div class="responsive-iframe-container">
+            <iframe src="https://www.google.com/calendar/embed?title=Dance%20Indy%20Swing&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=400&amp;wkst=2&amp;hl=en_GB&amp;bgcolor=%23FFFFFF&amp;src=admin%40indyswing.org&amp;color=%23A32929&amp;ctz=America/New_York" style=" border:solid 1px #777 " width="360" height="400" frameborder="0" scrolling="no"></iframe>
+          </div>
         </div>
 
         <div class="col-lg-4">
           <h2>News</h2>
+          <p> <strong>Note:</strong> <em>Our September 7th date has changed to September 14th. Please make note of it in your calendar.</em><p>
         </div>
 
         <div class="col-lg-4">
@@ -272,5 +275,18 @@
 
 
     
+    <script type="text/javascript">
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "'])").attr("target","_blank");
+
+        // Bonus - Automatically record clicks in Google Analytics
+        $("a[href^='http://']:not([href^='http://" + location.hostname + "']").on('click', function() {
+            if (_gaq === undefined) {
+                console.log("Add google analytics!");
+            }
+            else {
+                _gaq.push(['_trackPageview', '/outbound/' + $(this).attr('href')]);
+            }
+        });
+    </script>
   </body>
 </html>
