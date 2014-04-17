@@ -84,21 +84,21 @@
       
 
   <div class="row">
-  <link rel="bookmark" href="/posts/2014/03/new-web-site.html" />
-  <h2 class="h2link">New Web Site</h2>
-  
+    <link rel="bookmark" href="/posts/2014/03/new-web-site.html" />
+    <h2 class="h2link">New Web Site</h2>
+    
 
 <div class="date">
 	Posted: <span>March 3rd 2014.</span>
 Tags:
 	
 		<span>
-			<a href="/tag/web">Web</a>
+			<a href="/summaries.html?tag=Web">Web</a>
 			, 
 		</span>
 	
 		<span>
-			<a href="/tag/s3">S3</a>
+			<a href="/summaries.html?tag=S3">S3</a>
 			
 		</span>
 	
@@ -106,11 +106,13 @@ Categories:
 	
 </div>
 
-  <br>
-  
+    <br>
+    <div class="blog_posting">
+      
 <p>Welcome to our new web site makeover!</p>
 
 
+    </div>
   </div>
 
 <div class="row">
@@ -123,7 +125,7 @@ Categories:
         //DOM loaded
 
         $.getJSON( "/json/collections.json", function( data ) {
-          console.log(data);
+          //console.log(data);
 
           var posts = data.posts;
 
@@ -187,10 +189,6 @@ Categories:
 
 
 
-
-
-      
-<p>Welcome to our new web site makeover!</p>
 
 
     </div>
