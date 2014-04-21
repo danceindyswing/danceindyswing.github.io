@@ -87,6 +87,7 @@
 
 <!-- BEGIN: Underscore Template Definition. -->
 <script type="text/template" class="template">
+
 	<% var tagOrCategory = (rc.currentTag != null && rc.currentTag != undefined) ? rc.currentTag : ((rc.currentCategory != null && rc.currentCategory != undefined) ? rc.currentCategory : "Recent Posts"); %>
 
 	<h2><%-tagOrCategory%></h2>
@@ -125,6 +126,9 @@
 <!-- END: Underscore Template Definition. -->
 
  <script type="text/javascript">
+  // var $ = require('jquery');
+	// var $ = require('lodash');
+
  $(function(){
     //DOM loaded
 
