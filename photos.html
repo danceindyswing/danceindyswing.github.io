@@ -18,6 +18,8 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
   <link href="/assets/stylesheets/site.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/nanogallery/css/nanogallery.css" rel="stylesheet" type="text/css" />
+
 
   <!-- Just for debugging purposes. Don't actually copy this line! -->
   <!--[if lt IE 9]><script src="/assets/stylesheets/javascripts/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -82,12 +84,17 @@
     <div class="container">
       
 <h1 id="photos">Photos</h1>
-<p><div id="plusgallery" data-type="google" data-album-limit="1000" data-userid="112178475718910792258" data-include="6012665813088400177,5794015087657164289" data-credit="false"></div></p>
+<p><div id="nanogallery1"></div></p>
 <script type="text/javascript">
-$(function(){
-    //DOM loaded
-        $('#plusgallery').plusGallery();
-});</script>
+
+$(document).ready(function () {
+          $('#nanogallery1').nanoGallery({
+            kind:'picasa',
+            userID:'webmaster@indyswing.org',
+          });
+        });
+
+</script>
 
 
 
@@ -107,6 +114,9 @@ $(function(){
 
     
 <script src="/assets/js/main.js" type="text/javascript"></script>
+<script src="/assets/js/audiojs/audio.min.js" type="text/javascript"></script>
+<script src="/assets/nanogallery/third.party/hammer.js/hammer.min.js" type="text/javascript"></script>
+<script src="/assets/nanogallery/jquery.nanogallery.js" type="text/javascript"></script>
 
 
     
