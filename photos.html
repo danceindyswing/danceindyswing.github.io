@@ -47,6 +47,9 @@
   <div class="container">
     
 
+
+
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -55,28 +58,31 @@
         <span class="icon-bar"></span>
       </button>
 
-	  
-      <a class="navbar-brand visible-lg visible-md" href="#">Dance Indy Swing</a>
-    
+      <a class="navbar-brand visible-lg visible-md visible-sm visible-xs" href="#">Dance Indy Swing</a>
 
     </div>
+
     <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-    	
+      <ul class="nav navbar-nav pull-right">
+      
             <li class=""><a href="/index.html">Home</a></li>
-		  
+      
             <li class=""><a href="/music.html">Music</a></li>
-		  
+      
             <li class=""><a href="/people.html">People</a></li>
-		  
+      
             <li class="active"><a href="/photos.html">Photos</a></li>
-		  
+      
             <li class=""><a href="/about.html">About</a></li>
-		  
+      
             <li class=""><a href="/postings.html">Blog</a></li>
-		  
+      
       </ul>
     </div>
+
+
+
+
   </div>
 </div>
 
@@ -91,11 +97,12 @@ $(document).ready(function () {
           $('#nanogallery1').nanoGallery({
             kind:'picasa',
             userID:'webmaster@indyswing.org',
-            thumbnailWidth: 'auto',
-            breadcrumbAutoHideTopLevel: true,
-            colorScheme: 'light',
-            thumbnailLabel: { position:'overImageOnBottom', display:true, displayDescription:true, hideIcons:true },
-            thumbnailHoverEffect: 'labelSlideUp'
+
+            thumbnailLabel: {
+              position: 'onBottom',
+              displayDescription: false,
+              hideIcons:true
+            }
           });
         });
 
