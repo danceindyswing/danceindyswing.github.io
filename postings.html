@@ -91,7 +91,45 @@
       
 <div class="template_dummy"> </div>
 
-<!-- BEGIN: Underscore Template Definition. --><br><script type="text/template" class="template"><br><br>    &lt;% var tagOrCategory = (rc.currentTag != null &amp;&amp; rc.currentTag != undefined) ? rc.currentTag : ((rc.currentCategory != null &amp;&amp; rc.currentCategory != undefined) ? rc.currentCategory : &quot;Recent Posts&quot;); %&gt;<br><br>    <h2>&lt;%-tagOrCategory%&gt;</h2><br>    &lt;%<br>        var matchingPosts = (rc.currentTag != null &amp;&amp; rc.currentTag != undefined) ? <em>.filter(rc.posts, function(post){ return post.tags.indexOf(rc.currentTag) != -1; }) :<br>                                                                ((rc.currentCategory != null &amp;&amp; rc.currentCategory != undefined) ? </em>.filter(rc.posts, function(post){ return post.categories.indexOf(rc.currentCategory) != -1; }) : rc.posts) ;<br>    %&gt;<br>    &lt;% <em>.each( matchingPosts, function(post){ %&gt;<br>        <h3 class="h2link"><a href="<%-post.url%>">&lt;%-post.title%&gt;</a></h3><br>        <div class="date"><br>        &lt;% var dateString = moment(post.date).format(&#39;MMMM Do YYYY&#39;); %&gt;<br>        Posted: <span>&lt;%- dateString %&gt;.</span><br>        Tags:<br>            &lt;% </em>.each( post.tags, function( tag, index ){ %&gt;<br>                <span><br>                    <a href="/summaries.html?tag=<%- tag %>">&lt;%- tag %&gt;</a><br>                    &lt;% if ( index &lt; (post.tags.length-1) ){ %&gt;, &lt;% } %&gt;<br>                </span><br>            &lt;% }); %&gt;<br>        Categories:<br>            &lt;% _.each( post.categories, function( category, index ){ %&gt;<br>                <span><br>                    <a href="/summaries.html?category=<%- category %>">&lt;%- category %&gt;</a><br>                    &lt;% if ( index &lt; (post.categories.length-1) ){ %&gt;, &lt;% } %&gt;<br>                </span><br>            &lt;% }); %&gt;<br>        </div><br>        <p class="view"><br>            <br/><br>            &lt;%- post.excerpt %&gt;<a href="<%- post.url %>" class="more"> Read the post in full</a><br>        </p><br>    &lt;% }); %&gt;<br><br><br></script><br><!-- END: Underscore Template Definition. -->
+<!-- BEGIN: Underscore Template Definition. -->
+<script type="text/template" class="template">
+
+    <% var tagOrCategory = (rc.currentTag != null && rc.currentTag != undefined) ? rc.currentTag : ((rc.currentCategory != null && rc.currentCategory != undefined) ? rc.currentCategory : "Recent Posts"); %>
+
+    <h2><%-tagOrCategory%></h2>
+    <%
+        var matchingPosts = (rc.currentTag != null && rc.currentTag != undefined) ? _.filter(rc.posts, function(post){ return post.tags.indexOf(rc.currentTag) != -1; }) :
+                                                                ((rc.currentCategory != null && rc.currentCategory != undefined) ? _.filter(rc.posts, function(post){ return post.categories.indexOf(rc.currentCategory) != -1; }) : rc.posts) ;
+    %>
+    <% _.each( matchingPosts, function(post){ %>
+        <h3 class="h2link"><a href="<%-post.url%>"><%-post.title%></a></h3>
+        <div class="date">
+        <% var dateString = moment(post.date).format('MMMM Do YYYY'); %>
+        Posted: <span><%- dateString %>.</span>
+        Tags:
+            <% _.each( post.tags, function( tag, index ){ %>
+                <span>
+                    <a href="/summaries.html?tag=<%- tag %>"><%- tag %></a>
+                    <% if ( index < (post.tags.length-1) ){ %>, <% } %>
+                </span>
+            <% }); %>
+        Categories:
+            <% _.each( post.categories, function( category, index ){ %>
+                <span>
+                    <a href="/summaries.html?category=<%- category %>"><%- category %></a>
+                    <% if ( index < (post.categories.length-1) ){ %>, <% } %>
+                </span>
+            <% }); %>
+        </div>
+        <p class="view">
+            <br/>
+            <%- post.excerpt %><a href="<%- post.url %>" class="more"> Read the post in full</a>
+        </p>
+    <% }); %>
+
+
+</script>
+<!-- END: Underscore Template Definition. -->
 
  <script type="text/javascript">
   // var $ = require('jquery');
